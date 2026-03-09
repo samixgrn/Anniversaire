@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyeux anniversaire ❤️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="mouse-glow"></div>
+  <div class="hearts-background" id="heartsBackground"></div>
+
+  <main class="page">
+    <section class="panel reveal hero-panel">
+      <p class="section-label">Joyeux anniversaire ❤️</p>
+      <h1>Un petit univers rien que pour toi</h1>
+      <p class="intro-text">
+        J’ai voulu te créer quelque chose de spécial. Un petit endroit à nous,
+        avec des souvenirs, des surprises, et plein d’amour.
+      </p>
+
+      <div class="home-grid">
+        <a href="jeu1.html" class="feature-card">
+          <span class="feature-tag">Fun</span>
+          <h2>Mini jeu</h2>
+          <p>Un petit jeu mignon préparé juste pour toi.</p>
+        </a>
+
+        <a href="compliments.html" class="feature-card">
+          <span class="feature-tag">Douceur</span>
+          <h2>Compliments</h2>
+          <p>Appuie pour découvrir des mots rien que pour toi.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel reveal delay-1">
+      <p class="section-label">Ta lettre</p>
+
+      <button class="love-letter-card" id="openLetterBtn" type="button">
+        <div class="love-letter-paper">
+          <p class="letter-kicker">Pour mon amour ❤️</p>
+          <h2>Joyeux anniversaire</h2>
+          <p>
+            Même à distance, je voulais te faire sourire aujourd’hui.
+          </p>
+          <p>
+    J’ai une petite surprise pour toi.
+  </p>
+        <p>
+        Ce n’est peut-être pas un cadeau qu’on emballe, mais c’est quelque chose
+        fait entièrement pour toi, avec tout mon cœur.
+      </p>
+          <p>
+            J’ai fabriqué ce petit site pour toi, avec nos souvenirs,
+            des surprises, et tout ce que j’aime chez nous.
+          </p>
+            <p>
+    Clique pour ouvrir ta lettre.
+  </p>
+          <p class="signature">Je t’aime fort.</p>
+        </div>
+
+        <span class="letter-hint">Appuie pour ouvrir la lettre</span>
+      </button>
+    </section>
+  </main>
+
+<div class="floating-dock">
+  <button class="dock-btn" id="datesBtn" type="button" aria-label="Dates importantes">
+    <span class="dock-icon">📅</span>
+  </button>
+
+  <button class="dock-btn" id="musicBtn" type="button" aria-label="Musique">
+    <span class="dock-icon">🎵</span>
+  </button>
+
+  <button class="dock-btn" id="themeBtn" type="button" aria-label="Changer de thème">
+    <span class="dock-icon" id="themeIcon">🌙</span>
+  </button>
+</div>
+
+  <div class="overlay hidden" id="overlay"></div>
+
+  <aside class="side-panel hidden" id="sidePanel">
+    <div class="side-panel-header">
+      <div>
+        <p class="side-panel-label" id="panelLabel">Infos</p>
+        <h3 id="panelTitle">Titre</h3>
+      </div>
+
+      <button class="close-panel-btn" id="closePanelBtn" type="button">✕</button>
+    </div>
+
+    <div class="side-panel-body" id="panelBody">
+      <!-- contenu injecté en JS -->
+    </div>
+  </aside>
+
+  <div class="letter-modal hidden" id="letterModal">
+    <div class="letter-modal-card">
+      <button class="close-letter-btn" id="closeLetterBtn" type="button">✕</button>
+
+      <p class="letter-kicker">Pour mon amour ❤️</p>
+      <h2>Joyeux anniversaire</h2>
+      <p>
+        Aujourd’hui tu as 19 ans. Et même si ce n’est “qu’un anniversaire”, mais pour moi c'est important..
+        c'est le jour où tu es née. Sans ce jour-là, je ne t’aurais jamais rencontrée. <br>
+        Et sans toi, ma vie ne serait pas celle qu’elle est aujourd’hui.
+      </p>
+      <p>
+        Tu sais, quand je repense au lycée, je souris souvent. On était juste deux élèves 
+        tombés dans la même classe de seconde. Et il y a cette anecdote un peu bête avec 
+        ces zuzus… ce fameux classement des plus belles filles de la classe. <br>Pendant 
+        trois ans, il n’y a jamais eu de débat pour moi : il n’y avait qu’un seul nom dans 
+        ce classement. Le tien. La première, l’unique, la plus belle. Louise.
+      </p>
+      <p>
+        À l’époque, je ne savais pas encore tout ce que tu allais devenir pour moi.
+      </p>
+      <p>
+        Notre histoire est étrange, compliquée parfois, mais c’est justement ce qui 
+        la rend si vraie. On s’est rapprochés, puis on s’est mal compris. On s’est 
+        éloignés. On a vécu chacun notre vie de notre côté, chacun dans une autre relation, 
+        comme si nos chemins avaient décidé de se perdre pendant un moment.
+      </p>
+      <p>
+        Et pourtant, la vie a fini par nous remettre au même endroit.
+      </p>
+      <p>
+        On s’est retrouvés dans ces soirées, presque comme si rien n’avait vraiment disparu.
+        Et au fond de nous, quelque chose était encore là. Mais on avait peur. On sortait 
+        tous les deux de grosses histoires, et on se répétait que “l’amour c’était fini”. 
+        Comme si on essayait de se protéger.
+      </p>
+      <p>
+        Et pourtant… on a fini par se l’avouer.
+      </p>
+      <p>
+        Le jour même où je partais. Comme si 
+        l’univers avait décidé que notre histoire ne pouvait jamais être simple.
+      </p>
+      <p>
+        Mais malgré la distance, malgré les doutes, malgré tout ce qui tournait autour 
+        de nous, on a essayé. Parce qu’au fond, ce qu’on ressentait était plus fort que la 
+        logique.
+      </p>
+      <p>
+        Il y a eu des moments difficiles. Les rumeurs, la distance, les pauses, 
+        les silences… les moments lourd 
+        à porter. Et même si on s'est brisé plus d’une fois, je ne t’en ai jamais voulu. 
+        Parce que je sais à quel point tu es forte, et à quel point tu dois déjà affronter 
+        tellement de choses.
+      </p>
+    <p>
+Tu es l’une des personnes les plus courageuses que je connaisse.
+      </p>
+          <p>
+Et il y a quelque chose que je ne te dirai jamais assez : tu m’as sauvé. <br>Dans un 
+des pires moments de ma vie, tu as été là. Et je suis persuadé aujourd’hui que si 
+je suis encore là, si j’arrive aujourd’hui à être heureux, c’est en grande partie grâce 
+à toi.
+      </p>
+          <p>
+Puis il y a eu ce moment où je suis rentré. On s’est vus, on a parlé, on a tout remis à plat. 
+Et depuis ce jour-là, c’est comme si tout avait enfin retrouvé sa place.
+      </p>
+          <p>
+Je pense souvent à nos souvenirs.
+      </p>
+          <p>
+La première fois qu’on s’est embrassés, juste avant que je parte.
+Les soirs devant chez toi, dans la voiture, à "parler" pendant des 
+heures comme si le temps n’existait plus.
+Nos balades en voiture, en 
+sachant que l’important c’était juste d’être ensemble.
+Et tous ces appels FaceTime qui rendent la distance un peu moins dure.
+      </p>
+          <p>
+Ces moments peuvent paraître simples, mais pour moi ils valent tout.
+      </p>
+          <p>
+Une histoire qui a déjà traversé plus d’épreuves que beaucoup d’autres. Et malgré tout ça, on est encore là.
+      </p>
+          <p>
+Et ça, ça veut dire quelque chose.
+      </p>
+          <p>
+Je crois profondément en nous. Pas parce que tout est facile (au contraire) mais 
+parce que malgré les difficultés, malgré la distance, malgré tout ce qui aurait pu 
+nous séparer… on finit toujours par se retrouver.
+      </p>
+          <p>
+J’aime l’idée qu’on est en train de reconstruire quelque chose de solide.<br>
+Que chacun reconstruit son “je”.<br>
+Qu’on respecte le “tu”.<br>
+Pour continuer à construire notre “nous”.
+      </p>
+          <p>
+Mon cœur, mon amour, mon petit cœur…
+      </p>
+          <p>
+Je te souhaite un merveilleux 19e anniversaire. <br>
+J’espère que cette nouvelle année de ta vie sera remplie de lumière, de force, 
+de rêves et de bonheur. Parce que tu mérites tout ce qu’il y a de beau dans ce monde.
+      </p>
+          <p>
+Et peu importe la distance, peu importe les kilomètres, il y a une chose qui ne changera pas :
+      </p>
+          <p>
+Je suis incroyablement fier de t’aimer.
+      </p>
+                <p>
+Joyeux anniversaire Louise. ❤️
+      </p>
+      <p class="signature">Je t’aime.</p>
+    </div>
+  </div>
+
+  <audio id="loveAudio"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
