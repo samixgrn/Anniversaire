@@ -508,13 +508,23 @@ const unlockButton = document.getElementById("unlockButton");
 const unlockInput = document.getElementById("unlockInput");
 const siteLock = document.getElementById("siteLock");
 
-const SECRET_CODE = "Sami, l’unique homme de ta vie. L’homme le plus beau, le plus fort, le plus frais, le plus charismatique, le plus charmant, le plus romantique, le plus gentil, le plus sexy, le plus intelligent, le plus élégant, le plus drôle, le plus courageux et le plus extraordinaire de tout l’univers. Ton soleil, ta lune, ton étoile, ton destin, ton futur, ton bonheur, ton cœur, ton grand amour… l’homme de ta vie… bref, moi."; // ton code secret
+const SECRET_CODE = "Sami, l’unique homme de ta vie. L’homme le plus beau, le plus fort, le plus frais, le plus charismatique, le plus charmant, le plus romantique, le plus gentil, le plus sexy, le plus intelligent, le plus élégant, le plus drôle, le plus courageux et le plus extraordinaire de tout l’univers. Ton soleil, ta lune, ton étoile, ton destin, ton futur, ton bonheur, ton cœur, ton grand amour… l’homme de ta vie… bref, moi.";
+
+function normalize(text){
+    return text
+        .toLowerCase()
+        .replace(/\s+/g," ")
+        .trim();
+}
 
 if (unlockButton) {
 
     unlockButton.addEventListener("click", () => {
 
-        if (unlockInput.value === SECRET_CODE) {
+        const entered = normalize(unlockInput.value);
+        const secret = normalize(SECRET_CODE);
+
+        if (entered === secret) {
 
             siteLock.style.display = "none";
 

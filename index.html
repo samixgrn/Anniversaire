@@ -14,35 +14,43 @@
 </head>
 
 <body>
-    <div id="siteLock" class="lock-screen">
+<div id="siteLock" class="lock-screen">
 
-        <div class="panel lock-panel">
+    <div class="panel lock-panel">
 
-            <p class="section-label">Un message pour toi ❤️</p>
+        <p class="section-label">Un message pour toi ❤️</p>
 
-            <h1>Joyeux anniversaire mon amour ❤️</h1>
+        <h1>Joyeux anniversaire mon amour ❤️</h1>
 
-            <p class="intro-text">
-                J’ai préparé une petite.. surprise pour toi.
-            </p>
+        <p class="intro-text">
+            J’ai préparé une petite.. surprise pour toi.
+        </p>
 
-            <p class="intro-text">
-                Mais on va l’ouvrir ensemble un peu plus tard.
-            </p>
+        <p class="intro-text">
+            Mais on va l’ouvrir ensemble un peu plus tard.
+        </p>
 
-            <div class="unlock-area">
+        <form id="unlockForm" class="unlock-area">
 
-                <input type="password" id="unlockInput" placeholder="Code secret">
+            <input
+                type="text"
+                id="unlockInput"
+                placeholder="Code secret"
+                autocorrect="off"
+                autocapitalize="none"
+                autocomplete="off"
+                spellcheck="false"
+            >
 
-                <button id="unlockButton" class="dock-btn">
-                    Ouvrir la surprise
-                </button>
+            <button type="submit" id="unlockButton" class="dock-btn">
+                Ouvrir la surprise
+            </button>
 
-            </div>
-
-        </div>
+        </form>
 
     </div>
+
+</div>
 
     <div class="mouse-glow"></div>
     <div class="hearts-background" id="heartsBackground"></div>
