@@ -59,19 +59,19 @@ function showHeart() {
 }
 
 function getRewardMessage(total) {
-    if (total >= 100) {
+    if (total >= 90) {
         return "🎁 Récompense débloquée : sortie voiture + manger 🚗🍴 / sortie plage, restau et activité nautique 🌊💖 / séjour à l'hôtel ❤️";
     }
 
-    if (total >= 95) {
+    if (total >= 85) {
         return "🎁 Récompense débloquée : sortie voiture + manger 🚗🍴 / sortie plage, restau et activité nautique 🌊💖";
     }
 
-    if (total >= 90) {
+    if (total >= 80) {
         return "🎁 Récompense débloquée : sortie voiture + manger 🚗🍴";
     }
 
-    return "💗 Pas encore de récompense débloquée. Il faut atteindre au moins 90 points.";
+    return "💗 Pas encore de récompense débloquée. Il faut atteindre au moins 80 points.";
 }
 
 function endGame() {
