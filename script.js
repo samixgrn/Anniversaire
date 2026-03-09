@@ -504,32 +504,28 @@ if (backHome2) {
     backHome2.addEventListener("click", showHome);
 }
 
-const unlockButton = document.getElementById("unlockButton");
+const unlockForm = document.getElementById("unlockForm");
 const unlockInput = document.getElementById("unlockInput");
 const siteLock = document.getElementById("siteLock");
 
 const SECRET_CODE = "Sami";
 
-function normalize(text){
+function normalize(text) {
     return text
         .toLowerCase()
-        .replace(/\s+/g," ")
+        .replace(/\s+/g, " ")
         .trim();
 }
 
-if (unlockButton) {
-
-    unlockButton.addEventListener("click", () => {
+if (unlockForm && unlockInput && siteLock) {
+    unlockForm.addEventListener("submit", (e) => {
+        e.preventDefault();
 
         const entered = normalize(unlockInput.value);
         const secret = normalize(SECRET_CODE);
 
         if (entered === secret) {
-
             siteLock.style.display = "none";
-
         }
-
     });
-
 }
