@@ -10,90 +10,90 @@ let gameRunning = false;
 let timerId = null;
 
 function getTotalScore() {
-  return Number(localStorage.getItem("totalScore") || "0");
+    return Number(localStorage.getItem("totalScore") || "0");
 }
 
 function setTotalScore(value) {
-  localStorage.setItem("totalScore", String(value));
-  totalScoreText.textContent = String(value);
+    localStorage.setItem("totalScore", String(value));
+    totalScoreText.textContent = String(value);
 }
 
 function updateTotalDisplay() {
-  totalScoreText.textContent = String(getTotalScore());
+    totalScoreText.textContent = String(getTotalScore());
 }
 
 function clearGameArea() {
-  gameArea.innerHTML = "";
+    gameArea.innerHTML = "";
 }
 
 function spawnHeart() {
-  if (!gameRunning) return;
-
-  clearGameArea();
-
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.textContent = "💖";
-  heart.style.fontSize = "42px";
-
-  const maxX = Math.max(0, gameArea.clientWidth - 60);
-  const maxY = Math.max(0, gameArea.clientHeight - 60);
-
-  heart.style.left = Math.random() * maxX + "px";
-  heart.style.top = Math.random() * maxY + "px";
-
-  heart.addEventListener("click", () => {
     if (!gameRunning) return;
 
-    score++;
-    scoreText.textContent = String(score);
+    clearGameArea();
 
-    spawnHeart();
-  });
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "💖";
+    heart.style.fontSize = "42px";
 
-  gameArea.appendChild(heart);
+    const maxX = Math.max(0, gameArea.clientWidth - 60);
+    const maxY = Math.max(0, gameArea.clientHeight - 60);
+
+    heart.style.left = Math.random() * maxX + "px";
+    heart.style.top = Math.random() * maxY + "px";
+
+    heart.addEventListener("click", () => {
+        if (!gameRunning) return;
+
+        score++;
+        scoreText.textContent = String(score);
+
+        spawnHeart();
+    });
+
+    gameArea.appendChild(heart);
 }
 
 function endGame() {
-  gameRunning = false;
-  clearInterval(timerId);
-  timerId = null;
+    gameRunning = false;
+    clearInterval(timerId);
+    timerId = null;
 
-  clearGameArea();
+    clearGameArea();
 
-  const total = getTotalScore() + score;
-  setTotalScore(total);
-  localStorage.setItem("jeu1Done", "true");
+    const total = getTotalScore() + score;
+    setTotalScore(total);
+    localStorage.setItem("jeu1Done", "true");
 
-  alert("Jeu 1 terminé 💖\nTu as gagné " + score + " points.");
+    alert("Jeu 1 terminé 💖\nTu as gagné " + score + " points.");
 
-  window.location.href = "jeu2.html";
+    window.location.href = "jeu2.html";
 }
 
 function startGame() {
-  if (timerId) {
-    clearInterval(timerId);
-    timerId = null;
-  }
+    if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+    }
 
-  score = 0;
-  timeLeft = 20;
-  gameRunning = true;
+    score = 0;
+    timeLeft = 20;
+    gameRunning = true;
 
-  scoreText.textContent = "0";
-  timeText.textContent = String(timeLeft);
-
-  clearGameArea();
-  spawnHeart();
-
-  timerId = setInterval(() => {
-    timeLeft--;
+    scoreText.textContent = "0";
     timeText.textContent = String(timeLeft);
 
-    if (timeLeft <= 0) {
-      endGame();
-    }
-  }, 1000);
+    clearGameArea();
+    spawnHeart();
+
+    timerId = setInterval(() => {
+        timeLeft--;
+        timeText.textContent = String(timeLeft);
+
+        if (timeLeft <= 0) {
+            endGame();
+        }
+    }, 1000);
 }
 
 startBtn.addEventListener("click", startGame);
