@@ -59,11 +59,11 @@ function showHeart() {
 }
 
 function getRewardMessage(total) {
-    if (total >= 90) {
+    if (total >= 100) {
         return "🎁 Récompense débloquée : sortie voiture + manger 🚗🍴 / sortie plage, restau et activité nautique 🌊💖 / séjour à l'hôtel ❤️";
     }
 
-    if (total >= 85) {
+    if (total >= 90) {
         return "🎁 Récompense débloquée : sortie voiture + manger 🚗🍴 / sortie plage, restau et activité nautique 🌊💖";
     }
 
